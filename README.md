@@ -1,3 +1,8 @@
+Angular Course:<br/>
+Angular for Beginners Course [Full Front End Tutorial with TypeScript]<br/>
+https://www.youtube.com/watch?v=3qBXWUpoPHo<br/>
+
+
 # Hotelinventoryapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.

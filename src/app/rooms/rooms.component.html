@@ -1,0 +1,46 @@
+<!-- <h1>Welcome to {{hotelname}} </h1> -->
+ <!-- <hinv-header></hinv-header>
+ <hinv-header></hinv-header> -->
+
+ <router-outlet></router-outlet>
+
+<div [hidden]="hideRooms">
+    Number of rooms:
+    <div [ngStyle]="{'color': rooms.availableRooms > 0 ? 'green' : 'red'}" [innerText]="numberOfRooms"></div> 
+    <!--<div *ngIf="rooms.availableRooms > 0" [innerText]="numberOfRooms"></div> -->
+    <!--{{rooms?.availableRooms ?? 'No Rooms'}}-->
+
+</div>
+
+<!-- {{roomList | json}} -->
+
+
+<div *ngIf="selectRoom">
+    {{selectedRoom | json}}
+</div>
+
+<div>
+    <!-- <button (click)="addRoom()">Add Room</button> -->
+    <button routerLink="add">Add Room</button>
+</div>
+
+
+<div>
+    <input type="number" class="form-control" placeholder="Price" [formControl]="priceFilter" />
+</div> 
+
+
+<div *ngIf="rooms.availableRooms > 0">
+
+<!-- <div *ngIf="hideRooms"> -->
+    <!-- [price]="priceFilter.value" -->
+
+    {{priceFilter.value}}
+
+<hinv-rooms-list [rooms]="roomList" [price]="priceFilter.value" [title]="title" (selectedRoom)="selectRoom($event)"></hinv-rooms-list>
+
+</div>
+
+
+<button (click)="toggle()">Toggle</button>
+
